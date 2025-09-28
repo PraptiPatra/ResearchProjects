@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Project outputs & big files
+lunar_arvr/data/
+unzipped_dataset/
+lunar_arvr/dataset/source/
+*.npy
+*.zip
+
+# OS junk
+.DS_Store
+Thumbs.db

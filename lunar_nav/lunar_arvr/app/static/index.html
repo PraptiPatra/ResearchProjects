@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lunar Navigation Planner</title>
+  <link rel="stylesheet" href="static/styles.css"/>
+  <!-- A-Frame core -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <!-- Line component to ensure route lines render -->
+  <script src="https://unpkg.com/aframe-line-component/dist/aframe-line-component.min.js"></script>
+</head>
+<body>
+  <div id="coordModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Select your lunar landing site</h2>
+      <p>Enter pixel coordinates or pick a suggestion below (low-risk options).</p>
+      <div id="suggestions" class="suggestions"></div>
+      <form id="coordForm">
+        <label>Image ID <input type="number" name="imageId" required min="0"/></label>
+        <label>X coordinate <input type="number" name="coordX" required min="0"/></label>
+        <label>Y coordinate <input type="number" name="coordY" required min="0"/></label>
+        <button type="submit">Compute routes</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="mapWrapper">
+    <canvas id="mapCanvas"></canvas>
+    <div id="routesPanel" class="panel hidden"></div>
+    <div id="routeDetails" class="panel hidden"></div>
+  </div>
+
+  <div class="controls">
+    <button id="startVr" class="btn hidden">Start 3D Walkthrough</button>
+  </div>
+
+  <div id="vrContainer" class="hidden">
+    <a-scene id="vrScene" embedded background="color: black"></a-scene>
+    <button id="exitVr" class="btn">Exit 3D</button>
+  </div>
+
+  <script src="static/app.js"></script>
+</body>
+</html>
